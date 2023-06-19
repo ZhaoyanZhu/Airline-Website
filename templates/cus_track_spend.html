@@ -1,0 +1,94 @@
+<html>
+<head></head>
+<body>
+Total Year Spending:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year Spending</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line["total_year_cost"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Monthwise Spending In Past 6 Month:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year</th>
+<th>Month</th>
+<th>Spending</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line["year"]}}</td>
+<td>{{line["month_name"]}}</td>
+<td>{{line["spending"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Specify A Date Range You Want To Track:
+<br>
+<form action="/cus_track_spend_EXCE" method="POST">
+From
+<input type="date" name="Date From" required>
+To
+<input type="date" name="Date To" required>
+<br>
+<input type="submit" value="Track">
+<br>
+<br>
+Total Range Spending:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Total Range Spending</th>
+</tr>
+{% for line in posts2 %}
+<tr>
+<td>{{line["total_range_cost"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Monthwise Spending In Range:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year</th>
+<th>Month</th>
+<th>Spending</th>
+</tr>
+{% for line in posts3 %}
+<tr>
+<td>{{line["year"]}}</td>
+<td>{{line["month_name"]}}</td>
+<td>{{line["spending"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<br>
+<br>
+<a href="/cushome">Go Back</a>
+</body>
+</html>

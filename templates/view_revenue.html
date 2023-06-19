@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+<h1>View Revenue</h1>
+<br>
+Total Revenue In Last Month
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Revenue</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['revenue']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Total Revenue In Last Year
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Revenue</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line['revenue']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

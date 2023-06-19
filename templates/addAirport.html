@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+<form action="/addAirport_EXCE" method="POST">
+Airport  Code
+<input type="text" name="Code" required>
+<br>
+Airport Name
+<input type="text" name="Name" required>
+<br>
+City
+<input type="text" name="City" required>
+<br>
+<input type="submit" value="Add">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>
+
+

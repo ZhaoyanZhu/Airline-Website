@@ -1,0 +1,35 @@
+<html>
+<head></head>
+<body>
+<h1>Welcome {{username}}</h1>
+<a href="/cusviewFlight">View My Flight</a>
+<br>
+<a href="/cus_search_flight">Search For Future Flight</a>
+<br>
+<a href="/cus_ratecomment">Rate Your Flight</a>
+<br>
+<a href="/cus_track_spend">Track My Spending</a>
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="/cuslogout">Logout</a>
+</body>
+</html>
+

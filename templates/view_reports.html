@@ -1,0 +1,92 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+<h1>View Reports</h1>
+<br>
+Total Amounts Of Ticket Sold Last Year:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year Ticket Sold</th>
+</tr>
+{% for line in total1 %}
+<tr>
+<td>{{line["amount"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Total Amounts Of Ticket Sold Last Month:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Month Ticket Sold</th>
+</tr>
+{% for line in total2 %}
+<tr>
+<td>{{line["amount"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Monthwise Amount Sold In All Years:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year</th>
+<th>Month</th>
+<th>Amount</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line["year"]}}</td>
+<td>{{line["month_name"]}}</td>
+<td>{{line["amount"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Specify A Date Range You Want To View:
+<br>
+<form action="/view_reports_EXCE" method="POST">
+From
+<input type="date" name="Date From" required>
+To
+<input type="date" name="Date To" required>
+<br>
+<input type="submit" value="View">
+<br>
+Amount Of Tickets Sold In Date Range:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Year Ticket Sold</th>
+</tr>
+{% for line in total3 %}
+<tr>
+<td>{{line["amount"]}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<a href="/view_reports_end">Go Back</a>
+</body>
+</html>

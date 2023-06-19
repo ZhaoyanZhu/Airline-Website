@@ -1,0 +1,23 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<form action="/addAirplane_EXCE" method="POST">
+ID Number
+<input type="text" name="ID" required>
+<br>
+Number Of Seat
+<input type="number" name="Seat" min="0" step="1" required>
+<br>
+<input type="submit" value="Add">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

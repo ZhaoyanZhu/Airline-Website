@@ -1,0 +1,25 @@
+<html>
+<head></head>
+<body>
+<form action="/cus_proceed_payment" method="POST">
+<h1>Price:{{price}}</h1>
+<br>
+Card Type
+<input type="text" name="Card Type" placeholder="credit/debit" required>
+<br>
+Card Number
+<input type="text" name="Card Number" required>
+<br>
+Name On Card
+<input type="text" name="Name On" required>
+<br>
+EXP
+<input type="text" name="Exp" placeholder="MM/YY" required>
+<br>
+<input type="submit" value="Proceed">
+<br>
+</form>
+<a href="/cus_check_goback">Go Back</a>
+</body>
+</html>
+

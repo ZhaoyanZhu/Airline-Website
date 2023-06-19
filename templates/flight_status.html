@@ -1,0 +1,42 @@
+<html>
+<head></head>
+<body>
+<form action="/flight_status_EXCE" method="POST">
+Airline Name
+<input type="text" name="Airline Name" required>
+<br>
+Flight Number
+<input type="text" name="Flight Number" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" placeholder="YYYY-MM-DD" required>
+<br>
+<input type="submit" value="Check Status">
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Depature Date</th>
+<th>Deapture Time</th>
+<th>Flight Status</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['flight_status']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<a href="/">Go Back</a>
+</body>
+</html>
+
+

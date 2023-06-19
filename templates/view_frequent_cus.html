@@ -1,0 +1,71 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+<h1>View Customers</h1>
+<br>
+Most Frequnet Customer Within Last Year:
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Username</th>
+<th>Travel Times</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['email']}}</td>
+<td>{{line['max_frequency']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+View Taken Flights For Particular Customer:
+<br>
+<form action="/view_cus" method="POST">
+Customer Username(Email)
+<input type="email" name="Email" required>
+<br>
+<input type="submit" value="View">
+<br>
+<br>
+Flights Taken:
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Username</th>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Depature Airport</th>
+<th>Depature City</th>
+<th>Arrival Airport</th>
+<th>Arrival City</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line['email']}}</td>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<br>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

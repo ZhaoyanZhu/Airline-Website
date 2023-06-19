@@ -1,0 +1,55 @@
+<html>
+<head></head>
+<body>
+<h1>Welcome, Staff {{username}}</h1>
+<a href="/staffviewFlight">View Flights</a>
+<br>
+<a href="/addAirport">Add Airport</a>
+<br>
+<a href="/addAirplane">Add Airplane</a>
+<br>
+<a href="/createNewFlight">Create New Flights</a>
+<br>
+<a href="/changeStatus">Change Flight Status</a>
+<br>
+<a href="/view_rating">View Flight Ratings</a>
+<br>
+<a href="/view_frequent_cus">View Frequent Customers</a>
+<br>
+<a href="/view_reports">View Reports</a>
+<br>
+<a href="/view_revenue">View Earned Revenue</a>
+<br>
+<a href="/view_top_des">View Top Destinations</a>
+<br>
+Next 30 Days Flights:
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Source Airport</th>
+<th>Source City</th>
+<th>Destination Airport</th>
+<th>Destination City</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="/stafflogout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+Next 30 Days Flights:
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Source Airport</th>
+<th>Source City</th>
+<th>Destination Airport</th>
+<th>Destination City</th>
+<tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<form action="/createNewFlight_EXCE"  method="POST">
+Create New Flight:
+<br>
+<br>
+Flight Number
+<input type="text" name="Flight Number" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" placeholder="YYYY-MM-DD" required>
+<br>
+Depature Time
+<input type="time" name="Depature Time" required>
+<br>
+Depature Airport Code
+<input type="text" name="Depature Airport" required>
+<br>
+Arrival Date
+<input type="date" name="Arrival Date" placeholder="YYYY-MM-DD" required>
+<br>
+Arrival Time
+<input type="time" name="Arrival Time" required>
+<br>
+Arrival Airport Code
+<input type="text" name="Arrival Airport" required>
+<br>
+Base Price
+<input type="number" name="Base Price" min=0 required>
+<br>
+Airplane ID
+<input type="text" name="ID" required>
+<br>
+Flight Status
+<select name="Status" required>
+<option value="on-time">On-Time</option>
+<option value="delayed">Delayed</option>
+</select>
+<br>
+<input type="submit" value="Create">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head></head>
+<body>
+<form action="/cus_ratecomment_EXCE" method="POST">
+Enter The Flight Information You Want TO Rate:
+<br>
+Airline Name
+<input type="text" name="Airline Name" placeholder="ex.China Eastern" required>
+<br>
+Flight Number
+<input type="text" name="Flight Number" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" placeholder="YYYY-MM-DD" required>
+<br>
+Depature Time
+<input type="time" name="Depature Time" placeholder="hh:mm" required>
+<br>
+Rate (Range from 0.0 to 5.0 with one fixed decimal)
+<input type="number" name="Rate" placeholder="0.0-5.0" min="0" max="5" step=".1" required>
+<br>
+Comment
+<input type="text" name="Comment" required>
+<br>
+<input type="submit" value="Submit">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<br>
+<a href="/cushome">Go Back</a>
+</body>
+</html>
+

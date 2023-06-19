@@ -1,0 +1,60 @@
+insert into airline values("United");
+
+insert into airplane values("1","United",4);
+insert into airplane values("2","United",4);
+insert into airplane values("3","United",50);
+
+insert into airport  values("JFK","JFK","NYC");
+insert into airport  values("BOS","BOS","Boston");
+insert into airport  values("PVG","PVG","Shanghai");
+insert into airport  values("BEI","BEI","Beijing");
+insert into airport  values("SHEN","SHEN","Shenzhen");
+insert into airport  values("SFO","SFO"," San Francisco");
+insert into airport  values("LAX","LAX","Los Angles");
+insert into airport  values("HKA","HKA","Hong Kong");
+
+insert into flight values("United","102","2021-11-12","13:25:25","SFO","2021-11-12","16:50:25","LAX",300,"3","on-time");
+insert into flight values("United","104","2021-12-09","13:25","PVG","2021-12-09","16:50","BEI",300,"3","on-time");
+insert into flight values("United","106","2021-10-12","13:25","SFO","2021-11-12","16:50","LAX",350,"3","delayed");
+insert into flight values("United","206","2022-01-09","13:25","SFO","2022-01-09","16:50","LAX",400,"2","on-time");
+insert into flight values("United","207","2022-02-12","13:25","LAX","2022-02-12","16:50","SFO",300,"2","on-time");
+insert into flight values("United","134","2021-08-12","13:25","JFK","2021-08-12","16:50","BOS",300,"3","delayed");
+insert into flight values("United","296","2022-01-01","13:25","PVG","2022-01-01","16:50","SFO",3000,"1","on-time");
+insert into flight values("United","715","2021-11-28","10:25","PVG","2021-11-28","13:50","BEI",500,"1","delayed");
+insert into flight values("United","839","2021-02-12","13:25","SHEN","2021-02-12","16:50","BEI",800,"3","on-time");
+
+insert into ticket values(1,"testcustomer@nyu.edu","United","102","2021-11-12","13:25");
+insert into ticket values(2,"user1@nyu.edu","United","102","2021-11-12","13:25");
+insert into ticket values(3,"user2@nyu.edu","United","102","2021-11-12","13:25");
+insert into ticket values(4,"user1@nyu.edu","United","104","2021-12-09","13:25");
+insert into ticket values(5,"testcustomer@nyu.edu","United","104","2021-12-09","13:25");
+insert into ticket values(6,"testcustomer@nyu.edu","United","106","2021-10-12","13:25");
+insert into ticket values(7,"user3@nyu.edu","United","106","2021-10-12","13:25");
+insert into ticket values(8,"user3@nyu.edu","United","839","2021-02-12","13:25");
+insert into ticket values(9,"user3@nyu.edu","United","102","2021-11-12","13:25");
+insert into ticket values(11,"user3@nyu.edu","United","134","2021-08-12","13:25");
+insert into ticket values(12,"testcustomer@nyu.edu","United","715","2021-11-28","10:25");
+insert into ticket values(14,"user3@nyu.edu","United","206","2022-01-09","13:25");
+insert into ticket values(15,"user1@nyu.edu","United","206","2022-01-09","13:25");
+insert into ticket values(16,"user2@nyu.edu","United","206","2022-01-09","13:25");
+insert into ticket values(17,"user1@nyu.edu","United","207","2022-02-12","13:25");
+insert into ticket values(18,"testcustomer@nyu.edu","United","207","2022-02-12","13:25");
+insert into ticket values(20,"testcustomer@nyu.edu","United","296","2022-01-01","13:25");
+
+insert into purchase values(1,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-10-14 11:55:55",300);
+insert into purchase values(2,"user1@nyu.edu","credit","1111-2222-3333-5555","User 1","03/2023","2021-10-13 11:55:55",300);
+insert into purchase values(3,"user2@nyu.edu","credit","1111-2222-3333-5555","User 2","03/2023","2021-11-14 11:55:55",300);
+insert into purchase values(4,"user1@nyu.edu","credit","1111-2222-3333-5555","User 1","03/2023","2021-10-21 11:55:55",300);
+insert into purchase values(5,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-11-28 11:55:55",300);
+insert into purchase values(6,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-10-05 11:55:55",350);
+insert into purchase values(7,"user3@nyu.edu","credit","1111-2222-3333-5555","User 3","03/2023","2021-09-03 11:55:55",350);
+insert into purchase values(8,"user3@nyu.edu","credit","1111-2222-3333-5555","User 3","03/2023","2021-02-13 11:55:55",300);
+insert into purchase values(9,"user3@nyu.edu","credit","1111-2222-3333-5555","User 3","03/2023","2021-09-03 11:55:55",360);
+insert into purchase values(11,"user3@nyu.edu","credit","1111-2222-3333-5555","User 3","03/2023","2021-02-23 11:55:55",300);
+insert into purchase values(12,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-10-05 11:55:55",500);
+insert into purchase values(14,"user3@nyu.edu","credit","1111-2222-3333-5555","User 3","03/2023","2021-12-05 11:55:55",400);
+insert into purchase values(15,"user1@nyu.edu","credit","1111-2222-3333-5555","User 1","03/2023","2021-12-06 11:55:55",400);
+insert into purchase values(16,"user2@nyu.edu","credit","1111-2222-3333-5555","User 2","03/2023","2021-11-19 11:55:55",400);
+insert into purchase values(17,"user1@nyu.edu","credit","1111-2222-3333-5555","User 1","03/2023","2021-10-14 11:55:55",300);
+insert into purchase values(18,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-11-25 11:55:55",300);
+insert into purchase values(20,"testcustomer@nyu.edu","credit","1111-2222-3333-4444","Test Customer 1","03/2023","2021-09-12 11:55:55",3000);

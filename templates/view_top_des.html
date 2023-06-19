@@ -1,0 +1,52 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+<h1>View Top 3 Destinations</h1>
+<br>
+Top 3 Destination For Last 3 Months:
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Rank</th>
+<th>Destination City</th>
+<th>Tickets Sold</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['rank']}}</td>
+<td>{{line['destination']}}</td>
+<td>{{line['sold_num']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+Top 3 Destination For Last Year:
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Rank</th>
+<th>Destination City</th>
+<th>Tickets Sold</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line['rank']}}</td>
+<td>{{line['destination']}}</td>
+<td>{{line['sold_num']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

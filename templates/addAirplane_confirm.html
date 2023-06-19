@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<body>
+<h1>Confirm:</h1>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>ID</th>
+<th>Airline Name</th>
+<th>Number Of Seat</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['id_num']}}</td>
+<td>{{line['airline_name']}}</td>
+<td>{{line['num_seat']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</tbody>
+</table>
+<a href="/addAirplane">Add Another Airplane</a>
+<br>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

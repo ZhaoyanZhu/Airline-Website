@@ -1,0 +1,62 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+Enter The Flight Information Needed TO Change Status:
+<br>
+<br>
+<form action="/changeStatus_EXCE" method="POST">
+Flight Number
+<input type="text" name="Flight Number" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" required>
+<br>
+Depature Time
+<input type="time" name="Depature Time" required>
+<br>
+Select Flight Status To Change:
+<br>
+<select name="Status" required>
+<option value="on-time">On-Time</option>
+<option value="delayed">Delayed</option>
+</select>
+<br>
+<input type="submit" value="Change">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+<br>
+<br>
+The Flight You Changed Status:
+<br>
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Status</th>
+<tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['flight_status']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

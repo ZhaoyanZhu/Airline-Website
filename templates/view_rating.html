@@ -1,0 +1,88 @@
+<html>
+<head></head>
+<body>
+<h1>Airline Name:{{airline}}</h1>
+<br>
+<h1>View Flight Ratings</h1>
+<br>
+Average Rating Of Each Flight:
+<br>
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Average Rating</th>
+<tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['avg_rate']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+<br>
+View Specific Flight Rating And Comment:
+<br>
+<form action="/view_rating_EXCE" method="POST">
+Flight Number
+<input type="text" name="Flight Number" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" required>
+<br>
+Depature Time
+<input type="time" name="Depature Time" required>
+<br>
+<input type="submit" value="View">
+<br>
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+<br>
+<br>
+Rate & Comment:
+<br>
+<style type="text/css">table, th, td{ border: 1px solid black; }</style>
+<table>
+<tbody>
+<tr>
+<th>Username</th>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Depature Time</th>
+<th>Rate</th>
+<th>Comment</th>
+<tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line['email']}}</td>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['rate']}}</td>
+<td>{{line['comment']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<br>
+<br>
+<a href="/staffhome">Go Back</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+<form action="/staffregisterAuth" method="POST">
+Email As Uername
+<input type="email" name="Email" required>
+<br>
+Password
+<input type="password" name="Password" required>
+<br>
+First Name
+<input type="text" name="First Name" required>
+<br>
+Last Name
+<input type="text" name="Last Name" required>
+<br>
+Date of Birth
+<input type="date" name="Date Of Birth" placeholder="YYYY-MM-DD" required>
+<br>
+Airline Work For
+<input type="text" name="Airline Name" placeholder="ex.China Eastern" required>
+<br>
+Phone
+<input type="text" name="Phone" placeholder="phone#1,phone#2,phone#3..." required>
+<br>
+<input type="submit" value="Register As Staff">
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<a href="/">Go Back</a>
+</body>
+</html>

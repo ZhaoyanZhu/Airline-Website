@@ -1,0 +1,50 @@
+<html>
+<head></head>
+<body>
+<form action="/cusviewFlight_EXCE" method="POST">
+Date Range:
+<br>
+From
+<input type="date" name="From Date" placeholder="YYYY-MM-DD" required>
+To
+<input type="date" name="To Date" placeholder="YYYY-MM-DD" required>
+<br>
+Source Airport
+<input type="text" name="Source Airport" placeholder="ex.JFK" required>
+<br>
+Destination Airport
+<input type="text" name="Destination Airport" placeholder="ex.JFK" required>
+<br>
+<input type="submit" value="View My Flights"
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Depature Date</th>
+<th>Depature Time</th>
+<th>Source Airport</th>
+<th>Source City</th>
+<th>Destination Airport</th>
+<th>Destination City</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<a  href="/cushome">Go Back</a>
+</body>
+<html>

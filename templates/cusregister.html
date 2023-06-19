@@ -1,0 +1,46 @@
+<html>
+<head></head>
+<body>
+<form action="/cusregisterAuth" method="POST">
+Email
+<input type="email" name="Email" placeholder="Enter Your Email As Username" required>
+<br>
+Name
+<input type="text" name="Name" placeholder="FirstName LastName" required>
+<br>
+Password
+<input type="password" name="Password" required>
+<br>
+Building Number
+<input type="text" name="Building Number">
+Street
+<input type="text" name="Street">
+City
+<input type="text" name="City">
+State
+<input type="text" name="State">
+<br>
+Phone Number
+<input type="text" name="Phone Number" placeholder="000-000-0000">
+<br>
+Passport Number
+<input type="text" name="Passport Number">
+EXP Date
+<input type="text" name="EXP Date" placeholder="MM/YY">
+Country Issued
+<input type="text" name="Country">
+<br>
+Date Of Birth
+<input type="date" name="Date Of Birth" placeholder="YYYY/MM/DD" required>
+<br>
+<input type="submit" value="Register AS Customer">
+{% if error %}
+<p class="error">
+<strong>Error:</strong>
+{{error}}
+</p>
+{% endif %}
+</form>
+<a href="/">Go Back</a>
+</body>
+</html>

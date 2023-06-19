@@ -1,0 +1,87 @@
+<html>
+<head></head>
+<body>
+<form action="/search_future_trip_EXCE" method="POST">
+Source City
+<input type="text" name="Source City" placeholder="Source City Name" required>
+<br>
+Source Aiprort
+<input type="text" name="Source Airport" placeholder="ex.JFK" required>
+<br>
+Destination City
+<input type="text" name="Destination City" placeholder="Destination City Name" required>
+<br>
+Destination Airport
+<input type="text" name="Destination Airport" placeholder="ex.JFK" required>
+<br>
+Depature Date
+<input type="date" name="Depature Date" placeholder="YYYY-MM-DD" required>
+<br>
+Select Return Date If Round Trip!(Ignore If Not):
+<br>
+Return Date
+<input type="date" name="Return Date" placeholder="YYYY-MM-DD"> 
+<br>
+<input type="submit" value="Search">
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Deapture Date</th>
+<th>Deapture Time</th>
+<th>Source Airport</th>
+<th>Source City</th>
+<th>Destination Airport</th>
+<th>Destination City</th>
+</tr>
+{% for line in posts %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+Return Flight Information:
+<br>
+<style type="text/css">table, th, td{border: 1px solid black;}</style>
+<table>
+<tbody>
+<tr>
+<th>Airline Name</th>
+<th>Flight Number</th>
+<th>Depature Date</th>
+<th>Deapture Time</th>
+<th>Source Airport</th>
+<th>Source City</th>
+<th>Destination Airport</th>
+<th>Destination City</th>
+</tr>
+{% for line in posts1 %}
+<tr>
+<td>{{line['airline_name']}}</td>
+<td>{{line['flight_num']}}</td>
+<td>{{line['depature_date']}}</td>
+<td>{{line['depature_time']}}</td>
+<td>{{line['name']}}</td>
+<td>{{line['city']}}</td>
+<td>{{line['S.name']}}</td>
+<td>{{line['S.city']}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</form>
+<a href="/">Go Back</a>
+</body>
+</html>
